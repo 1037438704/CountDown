@@ -17,13 +17,12 @@ public class VerificationTimer extends CountDownTimer {
     private TextView textView;
     private int one, tow;
 
-
     /**
-     * @param millisInFuture    The number of millis in the future from the call
-     *                          to {@link #start()} until the countdown is done and {@link #onFinish()}
-     *                          is called.
-     * @param countDownInterval The interval along the way to receive
-     *                          {@link #onTick(long)} callbacks.
+     * @author millisInFuture 一共的时间
+     * @author countDownInterval 几秒
+     * @author textView 控件可以更换你所需要的控件
+     * @author one onTick方法中的背景颜色        这两个都是用于控制控件背景的
+     * @author tow  onFinish 方法中的背景颜色
      */
     public VerificationTimer(long millisInFuture, long countDownInterval, TextView textView) {
         super(millisInFuture, countDownInterval);
@@ -39,6 +38,7 @@ public class VerificationTimer extends CountDownTimer {
 
     @Override
     public void onTick(long millisUntilFinished) {
+        //如果为空就不换背景颜色
         if (one != 0) {
             textView.setBackgroundResource(one);
         }
@@ -48,6 +48,7 @@ public class VerificationTimer extends CountDownTimer {
 
     @Override
     public void onFinish() {
+        //如果为空就不换背景颜色
         if (tow != 0) {
             textView.setBackgroundResource(tow);
         }
